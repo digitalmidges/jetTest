@@ -100,7 +100,7 @@
                 android:layout_height="@dimen/expand_cell_height"
                 android:scaleType="centerCrop"
 
-                android:src="@drawable/profile_image_silhouette"
+                android:src="@drawable/profile_image_silhouette_2"
                 />
             </FrameLayout>
 

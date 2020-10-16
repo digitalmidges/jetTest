@@ -37,7 +37,7 @@ class EmployeeViewHolder(private val binding: RowEmployeeBinding) : RecyclerView
             tvEmployeeName.text = employeeItem.employee_name ?: "John Do"
 
             // default image
-            binding.imgProfile.setImageResource(R.drawable.profile_image_silhouette)
+            binding.imgProfile.setImageResource(R.drawable.profile_image_silhouette_2)
 
 
             if (employeeItem.employee_age.isNullOrEmpty()) {
@@ -63,13 +63,13 @@ class EmployeeViewHolder(private val binding: RowEmployeeBinding) : RecyclerView
 
 
             if (employeeItem.profile_image.isNullOrEmpty()) {
-                binding.imgProfile.setImageResource(R.drawable.profile_image_silhouette)
+                binding.imgProfile.setImageResource(R.drawable.profile_image_silhouette_2)
             } else {
                 Glide.with(binding.root)
                     .load(employeeItem.profile_image)
                     .centerCrop()
                     .placeholder(R.drawable.place_holder_shape)
-                    .error(R.drawable.profile_image_silhouette)
+                    .error(R.drawable.profile_image_silhouette_2)
                     .into(binding.imgProfile)
             }
 

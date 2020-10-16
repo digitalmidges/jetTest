@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+
+    <color name="purple">#59519a</color>
+    <color name="background_color">@color/very_light_pink_two</color>
+    <color name="text_color">#0C0C0E</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="clear_blue">#2d7bf9</color>
+    <color name="transparent">#00000000</color>
+    <color name="design_black_with_50_alpha">#80000000</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="dark_grey">#515149</color>
+    <color name="intercom_toolbar_text_color">#ffffff</color>
+    <color name="intercom_grid_text_color">#ffffff</color>
+    <color name="intercom_grid_row_color">#515149</color>
+    <color name="intercom_button_icon_tint_color">#00000000</color>
+    <color name="white_two_8">#d8d8d8</color>
+    <color name="reddish">#b64d4d</color>
+    <color name="green_apple">#44cd1f</color>
+    <color name="mushroom">#a3a2a2</color>
+    <color name="greyish_brown">#4d4d4d</color>
+    <color name="very_light_pink">#ededed</color>
+    <color name="azul">#296ede</color>
+    <color name="cornflower_blue">#3e6fd5</color>
+    <color name="very_light_pink_two">#f1f1f1</color>
+    <color name="red_design">#fb0303</color>
+    <color name="error_color">#EB3223</color>
+    <color name="very_light_pink_three">#e4e4e4</color>
+    <color name="crop_activity_background">#303030</color>
+    <color name="edit_text_disable_color">#949494</color>
+    <color name="brown_grey">#949494</color>
+    <color name="light_moss_green">#add271</color>
+    <color name="butterscotch">#f4bf4f</color>
+    <color name="pastel_red">#db605c</color>
+    <color name="very_light_pink_four">#e2e2e2</color>
+    <color name="brownish_grey">#6a6a6a</color>
+
+
+
+</resources>

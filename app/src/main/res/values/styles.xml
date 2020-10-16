@@ -1,0 +1,62 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/rounded_bottom_sheet_dialog</item>
+    </style>
+
+
+    <!--  |||||||||||| CUSTOM ALERT DIALOG  ||||||||||| -->
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowTitleStyle">@style/AlertDialogTextTitle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/AlertDialogPositiveButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/AlertDialogNegativeButton</item>
+    </style>
+
+
+    <style name="AlertDialogTextTitle">
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="AlertDialogPositiveButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColor">@color/clear_blue</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+    <style name="AlertDialogNegativeButton">
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:textColor">@color/brownish_grey</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <!--  |||||||||||| END OF CUSTOM ALERT DIALOG  ||||||||||| -->
+
+
+</resources>

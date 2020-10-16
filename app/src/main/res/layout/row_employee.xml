@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/mainContent"
+    android:layout_marginBottom="@dimen/expand_cell_collapse_margin"
+    android:layout_marginStart="@dimen/expand_cell_collapse_margin"
+    android:layout_marginEnd="@dimen/expand_cell_collapse_margin"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        app:cardBackgroundColor="@color/clear_blue"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="10dp">
+
+
+            <ImageView
+                android:id="@+id/imgArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvEmployeeName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_black"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imgArrow"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="wrap"
+                tools:text="Bob Nesta Marley" />
+
+            <!--    <TextView-->
+            <!--        android:id="@+id/tvEmployeeId"-->
+            <!--        style="@style/RowEmployeeSubtitleText"-->
+            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--        app:layout_constraintStart_toEndOf="@+id/imgArrow"-->
+            <!--        app:layout_constraintTop_toBottomOf="@+id/tvEmployeeName"-->
+            <!--        android:text="@string/employee_id_place_holder" />-->
+
+            <TextView
+                android:id="@+id/tvEmployeeAge"
+                style="@style/RowEmployeeSubtitleText"
+                android:text="@string/employee_age_place_holder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgArrow"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmployeeName" />
+
+            <TextView
+                android:id="@+id/tvEmployeeSalary"
+                style="@style/RowEmployeeSubtitleText"
+                android:text="@string/employee_salary_place_holder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgArrow"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmployeeAge" />
+
+            <FrameLayout
+                android:id="@+id/frameExpanded"
+                android:visibility="visible"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/expand_cell_height"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvEmployeeSalary"
+                android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/expand_cell_height"
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/profile_image_silhouette"
+                />
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

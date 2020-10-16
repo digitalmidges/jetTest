@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">JetTest</string>
+
+
+    <string name="press_again_to_exit">Click \"Back\" again to exit</string>
+
+    <string name="dialog_retention_deny_permission_title">Permissions</string>
+    <string name="dialog_retention_deny_permission_message">We have found that you refused some Permissions.\nIn order to use the app, you must accept all the permission.\nGo to app settings and navigate to \"Permissions\", then accept them all. </string>
+    <string name="dialog_retention_deny_permission_action_button">Go To Settings</string>
+    <string name="dialog_retention_deny_permission_negative_button">Cancel</string>
+
+
+    <string name="dialog_error_title">Error</string>
+    <string name="dialog_error_default_message">Ooops… Something went wrong</string>
+    <string name="dialog_error_action_button">OK</string>
+    <string name="dialog_success_default_message">Success</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="dialog_image_helper_use_camera">Take Photo</string>
+    <string name="dialog_image_helper_use_gallery">Gallery</string>
+    <string name="dialog_image_helper_delete_image">Delete Image</string>
+    <string name="no_data">No data</string>
+    <string name="employee_id_place_holder">Employee Id: %1$s</string>
+    <string name="employee_age_place_holder">Employee Age: %1$s</string>
+    <string name="employee_salary_place_holder">Employee Salary: %1$s</string>
+    <string name="server_error">Server Error</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="try_again">Try again</string>
+
+    <string name="nav_item_profile">Profile</string>
+    <string name="nav_item_inbox">Inbox</string>
+    <string name="nav_item_my_account">My Account</string>
+    <string name="nav_item_favorites">Favorites</string>
+    <string name="nav_item_help_about">Help/About</string>
+
+</resources>

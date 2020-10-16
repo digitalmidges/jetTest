@@ -1,0 +1,7 @@
+<resources>
+
+    <dimen name="expand_cell_height">200dp</dimen>
+    <dimen name="expand_cell_expand_margin">5dp</dimen>
+    <dimen name="expand_cell_collapse_margin">20dp</dimen>
+
+</resources>

@@ -4,4 +4,7 @@
     <dimen name="expand_cell_expand_margin">5dp</dimen>
     <dimen name="expand_cell_collapse_margin">20dp</dimen>
 
+    <!-- Overriding sizes of the FAB -->
+    <dimen name="fab_size">70dp</dimen>
+
 </resources>

@@ -1,12 +1,10 @@
 package com.digitalmidges.jettest.ui.activities
 
 import android.view.View
-import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.digitalmidges.jettest.BaseApplication
 import com.digitalmidges.jettest.R
 import com.digitalmidges.jettest.databinding.ActivityMainBinding
 import com.digitalmidges.jettest.ui.adapters.MenuAdapter
@@ -55,16 +53,26 @@ class MainActivity : BaseActivity(), HasAndroidInjector {
         initToolbar()
         initRecyclerViewAndSideMenu()
         initSideMenu()
+        initFilterView()
+    }
+
+    private fun initFilterView() {
+
+        binding.apply {
+
+            filterView.setOnFabClickListener {
+
+                toast("Booom")
+
+            }
+
+        }
+
     }
 
 
     override fun setViewsClickListener() {
 
-        binding.fab.setOnClickListener {
-
-            toast("TODO!!!!")
-
-        }
 
     }
 

@@ -3,23 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     app:layoutDescription="@xml/filter_view_scene">
 
-
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/fab"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="end|bottom"-->
-<!--        android:layout_margin="30dp"-->
-<!--        android:elevation="3dp"-->
-<!--        android:src="@drawable/ic_baseline_filter_list_24"-->
-<!--        app:elevation="3dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent" />-->
-
-
-
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fab_size"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        tools:src="@color/transparent"
+        android:background="@color/transparent"
+        android:elevation="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imgFilterIcon"
@@ -31,6 +30,9 @@
         app:layout_constraintTop_toTopOf="@id/customFab"
         app:layout_constraintBottom_toBottomOf="@id/customFab"
         app:srcCompat="@drawable/ic_baseline_filter_list_24"/>
+
+
+
     <com.digitalmidges.jettest.customViews.RoundedCardView
         android:id="@+id/customFab"
         android:layout_width="@dimen/fab_size"
@@ -47,6 +49,9 @@
 
 
 
+
+
+
     <View
         android:id="@+id/horizontalDivider"
         android:layout_width="0dp"
@@ -58,19 +63,55 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/imgCloseFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        tools:background="@color/clear_blue"
+        app:srcCompat="@drawable/ic_baseline_close_24"
+        android:elevation="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bottomBar"
+        app:layout_constraintBottom_toBottomOf="@id/bottomBar"
+        />
+
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/bottomBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/fab_size"-->
+<!--        android:outlineProvider="none"-->
+<!--        android:visibility="invisible"-->
+<!--        tools:visibility="visible"-->
+<!--        tools:cardBackgroundColor="@color/red_design"-->
+<!--        app:cardBackgroundColor="@color/transparent"-->
+<!--        app:cardCornerRadius="0dp"-->
+<!--        android:elevation="50dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+
+
+
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/guidelineEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.8" />
+
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

@@ -41,6 +41,8 @@ class MainActivity : BaseActivity(), HasAndroidInjector {
     }
 
     override fun beforeInit() {
+
+        setNeedExitDelay() // from base activity - user need double back click in order to exit the app
     }
 
     override fun initViews() {
@@ -62,7 +64,7 @@ class MainActivity : BaseActivity(), HasAndroidInjector {
 
             filterView.setOnFabClickListener {
 
-                toast("Booom")
+//                toast("Booom")
 
             }
 

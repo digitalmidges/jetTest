@@ -92,33 +92,16 @@ abstract class BaseActivity : AppCompatActivity() {
         dialogLoading = DialogLoading(this)
 
 
-        setFullScreenActivityIfNeeded()
-//        setStatusBarTransparentColor()
-        getBaseActivityIntentExtras()
-    }
-
-    private fun getBaseActivityIntentExtras() {
-
-        if (intent != null && intent.extras != null) {
-        }
-
-
     }
 
 
-    private fun setFullScreenActivityIfNeeded() {
-        //        if (isFullScreenActivity()) {
-        //            hideSystemUI()
-        //        } else {
-        ////            showSystemUI()
-        //        }
-    }
+
+
 
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         setStatusBarTransparentColor()
-
     }
 
     private fun setStatusBarTransparentColor() {
@@ -333,7 +316,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        setFullScreenActivityIfNeeded()
     }
 
 

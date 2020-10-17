@@ -1,50 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <Transition
-        motion:constraintSetEnd="@+id/end"
-        motion:constraintSetStart="@id/start"
-        motion:duration="400">
-       <KeyFrameSet>
-           <KeyPosition
-               motion:motionTarget="@+id/customFab"
-               motion:framePosition="50"
-               motion:keyPositionType="deltaRelative"
-               motion:percentX="0.85"
-               motion:percentY="0.15" />
-           <KeyPosition
-               motion:motionTarget="@+id/imgFilterIcon"
-               motion:framePosition="50"
-               motion:keyPositionType="deltaRelative"
-               motion:percentX="0.85"
-               motion:percentY="0.15" />
-       </KeyFrameSet>
-        <OnClick motion:targetId="@id/customFab" />
-    </Transition>
 
-    <ConstraintSet android:id="@+id/start">
+            <!--  set 1 - start set  -->
+    <ConstraintSet android:id="@+id/set_1">
+
+        <Constraint android:id="@id/customFab">
+            <Layout
+                android:layout_width="@dimen/fab_size"
+                android:layout_height="@dimen/fab_size"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent" />
+
+            <CustomAttribute
+                motion:attributeName="radius"
+                motion:customDimension="35dp" />
+
+            <CustomAttribute
+                motion:attributeName="cardElevation"
+                motion:customDimension="10dp" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/bottomBar"
+            android:elevation="50dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fab_size"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="visible"
+            motion:layout_constraintStart_toStartOf="parent"/>
+
     </ConstraintSet>
 
-    <ConstraintSet android:id="@+id/end">
+    <!--  set 2 - fab to middle  -->
+
+    <ConstraintSet
+        android:id="@+id/set_2"
+        motion:deriveConstraintsFrom="@id/set_1">
         <Constraint
-            motion:layout_constraintDimensionRatio="1:1"
-            android:layout_height="0dp"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="412dp"
-            motion:layout_constraintHorizontal_bias="0.0"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="0dp"
-            android:id="@+id/horizontalDivider" />
-        <Constraint
+            android:id="@+id/customFab"
+            android:layout_width="@dimen/fab_size"
             android:layout_height="@dimen/fab_size"
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="@dimen/fab_size"
-            motion:layout_constraintTop_toBottomOf="@+id/horizontalDivider"
-            android:id="@+id/customFab"
-            motion:layout_constraintStart_toStartOf="parent" />
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/horizontalDivider" />
     </ConstraintSet>
+
+    <!--  set 3 - fab full screen, image filter to bottom  -->
+    <ConstraintSet
+        android:id="@+id/set_3"
+        motion:deriveConstraintsFrom="@+id/set_2">
+        <Constraint
+            android:id="@+id/imgFilterIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@id/bottomBar"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@id/bottomBar" />
+
+
+
+        <Constraint
+            android:id="@+id/customFab"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/horizontalDivider">
+            <CustomAttribute
+                motion:attributeName="radius"
+                motion:customDimension="0dp" />
+        </Constraint>
+
+
+    </ConstraintSet>
+
+
+    <!--  set 4 - show close filter button, bottom bar color change, view pager and tabs show, filter image to the right  -->
+
+    <ConstraintSet
+        android:id="@+id/set_4"
+        motion:deriveConstraintsFrom="@+id/set_3" >
+
+
+        <Constraint android:id="@id/imgFilterIcon">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintBottom_toBottomOf="@id/bottomBar"
+                motion:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+                motion:layout_constraintStart_toStartOf="@id/guidelineEnd"
+                motion:layout_constraintTop_toTopOf="@id/bottomBar" />
+
+            <CustomAttribute
+                motion:attributeName="colorFilter"
+                motion:customColorValue="@color/white" />
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+
+        <Constraint android:id="@id/bottomBar">
+            <PropertySet android:visibility="visible" />
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/colorPrimaryDark" />
+        </Constraint>
+
+
+
+        <Constraint android:id="@id/imgCloseFilter">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                motion:layout_constraintBottom_toBottomOf="@id/bottomBar"
+                motion:layout_constraintEnd_toStartOf="@id/guidelineStart"
+                motion:layout_constraintStart_toStartOf="@id/guidelineStart"
+                motion:layout_constraintTop_toTopOf="@id/bottomBar" />
+
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
+
+
+    </ConstraintSet>
+
+
+
+    <!-- ////////////////////////////// Transitions /////////////////////////////////////-->
+
+    <!--  Transition 1 - arc path for fab  -->
+
+    <Transition
+        motion:constraintSetEnd="@+id/set_2"
+        motion:constraintSetStart="@id/set_1"
+        motion:duration="400"
+        motion:layoutDuringTransition="honorRequest"
+        motion:motionInterpolator="linear">
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/customFab"
+                motion:percentX="0.85"
+                motion:percentY="0.15" />
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@+id/imgFilterIcon"
+                motion:percentX="0.85"
+                motion:percentY="0.15" />
+        </KeyFrameSet>
+        <OnClick motion:targetId="@id/customFab" />
+    </Transition>
+
+
+
+
+    <!--  Transition 2 - fab to full screen and image filter to bottom  -->
+    <Transition
+        motion:constraintSetEnd="@+id/set_3"
+        motion:constraintSetStart="@+id/set_2"
+        motion:duration="400"
+        motion:autoTransition="animateToEnd"
+        motion:layoutDuringTransition="honorRequest"
+        motion:motionInterpolator="linear">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:framePosition="80"
+                motion:motionTarget="@id/customFab">
+                <CustomAttribute
+                    motion:attributeName="radius"
+                    motion:customDimension="160dp" />
+            </KeyAttribute>
+            <KeyPosition
+                motion:framePosition="80"
+                motion:motionTarget="@id/customFab"
+                motion:percentHeight="1"
+                motion:percentWidth="1" />
+            <KeyPosition
+                motion:framePosition="80"
+                motion:keyPositionType="deltaRelative"
+                motion:motionTarget="@id/imgFilterIcon"
+                motion:percentY="1" />
+        </KeyFrameSet>
+
+
+    </Transition>
+
+
+    <!--  Transition 3- show close filter button, bottom bar color change, view pager and tabs show, filter image to the right  -->
+    <Transition
+        motion:constraintSetStart="@+id/set_3"
+        motion:constraintSetEnd="@+id/set_4"
+        motion:autoTransition="animateToEnd"
+        motion:motionInterpolator="linear"
+        motion:duration="300"
+        motion:layoutDuringTransition="honorRequest" >
+    </Transition>
+
+
 </MotionScene>

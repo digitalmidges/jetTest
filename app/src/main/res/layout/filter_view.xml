@@ -41,7 +41,7 @@
         android:layout_margin="30dp"
         app:cardBackgroundColor="@color/colorAccent"
         app:cardCornerRadius="35dp"
-        app:cardElevation="10dp"
+        app:cardElevation="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -49,14 +49,25 @@
 
 
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/transparent"
+        android:elevation="40dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
 
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
+        app:layout_constraintEnd_toEndOf="@id/horizontalDivider"
+        app:layout_constraintStart_toStartOf="@id/horizontalDivider"
+        app:layout_constraintTop_toTopOf="@id/horizontalDivider" />
 
 
     <View
         android:id="@+id/horizontalDivider"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="408dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,20 +89,6 @@
         />
 
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/bottomBar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="@dimen/fab_size"-->
-<!--        android:outlineProvider="none"-->
-<!--        android:visibility="invisible"-->
-<!--        tools:visibility="visible"-->
-<!--        tools:cardBackgroundColor="@color/red_design"-->
-<!--        app:cardBackgroundColor="@color/transparent"-->
-<!--        app:cardCornerRadius="0dp"-->
-<!--        android:elevation="50dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
 
 

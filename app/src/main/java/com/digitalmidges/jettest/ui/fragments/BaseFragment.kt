@@ -67,12 +67,16 @@ abstract class BaseFragment : Fragment() {
 
 
     protected open fun blockUI() {
-        dialogLoading.show()
+        if (this::dialogLoading.isInitialized) {
+            dialogLoading.show()
+        }
     }
 
 
     protected open fun showUI() {
-        dialogLoading.dismiss()
+        if (this::dialogLoading.isInitialized) {
+            dialogLoading.dismiss()
+        }
     }
 
 

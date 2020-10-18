@@ -3,7 +3,7 @@
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
 
-            <!--  set 1 - start set  -->
+    <!--  set 1 - start set  -->
     <ConstraintSet android:id="@+id/set_1">
 
         <Constraint android:id="@id/customFab">
@@ -21,17 +21,23 @@
 
             <CustomAttribute
                 motion:attributeName="cardElevation"
-                motion:customDimension="10dp" />
+                motion:customDimension="15dp" />
         </Constraint>
+
         <Constraint
-            android:id="@+id/bottomBar"
-            android:elevation="50dp"
-            motion:layout_constraintEnd_toEndOf="parent"
+            android:id="@id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="@dimen/fab_size"
-            motion:layout_constraintBottom_toBottomOf="parent"
+            android:elevation="50dp"
             android:visibility="visible"
-            motion:layout_constraintStart_toStartOf="parent"/>
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent">
+            <PropertySet android:visibility="visible" />
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="@color/transparent" />
+        </Constraint>
 
     </ConstraintSet>
 
@@ -44,10 +50,17 @@
             android:id="@+id/customFab"
             android:layout_width="@dimen/fab_size"
             android:layout_height="@dimen/fab_size"
-            motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@+id/horizontalDivider" />
+            motion:layout_constraintTop_toTopOf="@+id/horizontalDivider"
+            motion:layout_constraintBottom_toTopOf="@+id/bottomBar">
+
+            <CustomAttribute
+                motion:attributeName="cardElevation"
+                motion:customDimension="30dp" />
+        </Constraint>
+
+
     </ConstraintSet>
 
     <!--  set 3 - fab full screen, image filter to bottom  -->
@@ -64,7 +77,6 @@
             motion:layout_constraintTop_toTopOf="@id/bottomBar" />
 
 
-
         <Constraint
             android:id="@+id/customFab"
             android:layout_width="0dp"
@@ -72,7 +84,7 @@
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toBottomOf="@+id/horizontalDivider">
+            motion:layout_constraintTop_toTopOf="@+id/horizontalDivider">
             <CustomAttribute
                 motion:attributeName="radius"
                 motion:customDimension="0dp" />
@@ -86,7 +98,7 @@
 
     <ConstraintSet
         android:id="@+id/set_4"
-        motion:deriveConstraintsFrom="@+id/set_3" >
+        motion:deriveConstraintsFrom="@+id/set_3">
 
 
         <Constraint android:id="@id/imgFilterIcon">
@@ -113,7 +125,6 @@
         </Constraint>
 
 
-
         <Constraint android:id="@id/imgCloseFilter">
             <Layout
                 android:layout_width="wrap_content"
@@ -127,21 +138,24 @@
         </Constraint>
 
 
+        <Constraint android:id="@id/viewPager">
+            <PropertySet android:visibility="visible" />
+        </Constraint>
+
 
     </ConstraintSet>
-
 
 
     <!-- ////////////////////////////// Transitions /////////////////////////////////////-->
 
     <!--  Transition 1 - arc path for fab  -->
 
+<!--    motion:layoutDuringTransition="honorRequest"-->
+<!--    motion:motionInterpolator="linear"-->
     <Transition
         motion:constraintSetEnd="@+id/set_2"
         motion:constraintSetStart="@id/set_1"
-        motion:duration="400"
-        motion:layoutDuringTransition="honorRequest"
-        motion:motionInterpolator="linear">
+        motion:duration="400">
         <KeyFrameSet>
             <KeyPosition
                 motion:framePosition="50"
@@ -156,20 +170,19 @@
                 motion:percentX="0.85"
                 motion:percentY="0.15" />
         </KeyFrameSet>
-        <OnClick motion:targetId="@id/customFab" />
     </Transition>
-
-
 
 
     <!--  Transition 2 - fab to full screen and image filter to bottom  -->
     <Transition
         motion:constraintSetEnd="@+id/set_3"
         motion:constraintSetStart="@+id/set_2"
-        motion:duration="400"
-        motion:autoTransition="animateToEnd"
-        motion:layoutDuringTransition="honorRequest"
-        motion:motionInterpolator="linear">
+        motion:duration="300"
+       >
+
+<!--        motion:layoutDuringTransition="honorRequest"-->
+<!--        motion:motionInterpolator="linear"-->
+
 
         <KeyFrameSet>
             <KeyAttribute
@@ -197,13 +210,11 @@
 
     <!--  Transition 3- show close filter button, bottom bar color change, view pager and tabs show, filter image to the right  -->
     <Transition
-        motion:constraintSetStart="@+id/set_3"
         motion:constraintSetEnd="@+id/set_4"
-        motion:autoTransition="animateToEnd"
-        motion:motionInterpolator="linear"
-        motion:duration="300"
-        motion:layoutDuringTransition="honorRequest" >
-    </Transition>
+        motion:constraintSetStart="@+id/set_3"
+        motion:duration="400"
+        motion:layoutDuringTransition="honorRequest"
+        motion:motionInterpolator="linear"/>
 
 
 </MotionScene>

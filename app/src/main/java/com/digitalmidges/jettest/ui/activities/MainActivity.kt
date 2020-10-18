@@ -60,15 +60,15 @@ class MainActivity : BaseActivity(), HasAndroidInjector {
 
     private fun initFilterView() {
 
-        binding.apply {
-
-            filterView.setOnFabClickListener {
-
-//                toast("Booom")
-
-            }
-
-        }
+//        binding.apply {
+//
+//            filterView.setOnFabClickListener {
+//
+////                toast("Booom")
+//
+//            }
+//
+//        }
 
     }
 

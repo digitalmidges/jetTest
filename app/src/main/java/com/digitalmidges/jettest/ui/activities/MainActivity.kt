@@ -55,22 +55,9 @@ class MainActivity : BaseActivity(), HasAndroidInjector {
         initToolbar()
         initRecyclerViewAndSideMenu()
         initSideMenu()
-        initFilterView()
+//        initFilterView()
     }
 
-    private fun initFilterView() {
-
-//        binding.apply {
-//
-//            filterView.setOnFabClickListener {
-//
-////                toast("Booom")
-//
-//            }
-//
-//        }
-
-    }
 
 
     override fun setViewsClickListener() {

@@ -41,7 +41,7 @@ object FilterHelper {
          filterList.add(FilterItem("ViewPager 2"))
          filterList.add(FilterItem("Is The Power"))
          filterList.add(FilterItem("Behind"))
-         filterList.add(FilterItem("Your swipes(:"))
+         filterList.add(FilterItem("Your swipes"))
          filterList.add(FilterItem("Nice."))
         return filterList
     }
